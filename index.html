@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Z56 Smart Watch</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="watch-app">
+
+    <!-- Watch -->
+    <section class="watch">
+
+      <!-- Screen -->
+      <div class="screen">
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <span id="connection">●</span>
+          <span id="battery">🔋 86%</span>
+        </div>
+
+
+        <!-- Main Watch Face -->
+        <div class="watch-face" id="watchFace">
+
+          <div class="date" id="date">
+            MON, SEP 14
+          </div>
+
+          <div class="time" id="time">
+            03:00
+          </div>
+
+          <div class="seconds" id="seconds">
+            00
+          </div>
+
+          <div class="weather">
+            <span>☀️</span>
+            <strong id="temperature">28°C</strong>
+          </div>
+
+          <div class="watch-stats">
+
+            <div>
+              <span>❤️</span>
+              <strong id="heartRate">78</strong>
+              <small>BPM</small>
+            </div>
+
+            <div>
+              <span>👟</span>
+              <strong id="steps">4,286</strong>
+              <small>STEPS</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Apps Screen -->
+        <div class="apps-screen" id="appsScreen">
+
+          <h2>Apps</h2>
+
+          <div class="app-grid">
+
+            <button class="watch-app-button" data-app="heart">
+              ❤️
+              <span>Heart</span>
+            </button>
+
+            <button class="watch-app-button" data-app="steps">
+              👟
+              <span>Steps</span>
+            </button>
+
+            <button class="watch-app-button" data-app="weather">
+              ☀️
+              <span>Weather</span>
+            </button>
+
+            <button class="watch-app-button" data-app="music">
+              🎵
+              <span>Music</span>
+            </button>
+
+            <button class="watch-app-button" data-app="messages">
+              🔔
+              <span>Alerts</span>
+            </button>
+
+            <button class="watch-app-button" data-app="settings">
+              ⚙️
+              <span>Settings</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- App Detail -->
+        <div class="detail-screen" id="detailScreen">
+
+          <button id="backButton" class="back-button">
+            ‹
+          </button>
+
+          <div id="detailIcon" class="detail-icon">
+            ❤️
+          </div>
+
+          <h2 id="detailTitle">
+            Heart Rate
+          </h2>
+
+          <div id="detailValue" class="detail-value">
+            78 BPM
+          </div>
+
+          <p id="detailText">
+            Your current heart rate
+          </p>
+
+        </div>
+
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+
+          <button id="homeButton">
+            🏠
+            <span>Home</span>
+          </button>
+
+          <button id="appsButton">
+            ⠿
+            <span>Apps</span>
+          </button>
+
+        </nav>
+
+      </div>
+
+      <!-- Watch Crown -->
+      <div class="crown"></div>
+
+    </section>
+
+
+    <!-- Controls -->
+    <section class="controls">
+
+      <h1>Z56 Watch</h1>
+
+      <p>
+        Smart watch simulator
+      </p>
+
+      <div class="control-buttons">
+
+        <button id="nextFace">
+          🔄 Change Watch Face
+        </button>
+
+        <button id="batteryButton">
+          🔋 Battery
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
