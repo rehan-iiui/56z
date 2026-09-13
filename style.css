@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #080b10;
+  --screen: #05070a;
+  --panel: #11161e;
+  --border: #252d38;
+  --text: #f8fafc;
+  --muted: #7f8a99;
+  --green: #52e889;
+  --blue: #48a9ff;
+  --red: #ff4d67;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at center, #1b2532 0%, #080b10 55%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.watch-app {
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+}
+
+.watch-app > h1 {
+  font-size: 30px;
+}
+
+
+/* =========================
+   WATCH BODY
+========================= */
+
+.watch {
+  position: relative;
+  width: 360px;
+  height: 470px;
+  margin: 0 auto 35px;
+  padding: 14px;
+  border-radius: 70px;
+  background:
+    linear-gradient(145deg, #343b45, #11151b 50%, #303741);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.65),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 58px;
+  background: var(--screen);
+  border: 4px solid #050505;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.9),
+    0 0 0 2px #3c434d;
+}
+
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.status-bar {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  right: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #d8dee7;
+  font-size: 11px;
+  z-index: 10;
+}
+
+#connection {
+  color: var(--green);
+  font-size: 13px;
+}
+
+
+/* =========================
+   WATCH FACE
+========================= */
+
+.watch-face {
+  position: absolute;
+  inset: 0;
+  padding: 75px 25px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.time {
+  margin-top: 12px;
+  font-size: 66px;
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+
+.seconds {
+  margin-top: 5px;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.weather {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #e5e7eb;
+}
+
+.weather span {
+  font-size: 19px;
+}
+
+.weather strong {
+  font-size: 14px;
+}
+
+
+/* =========================
+   WATCH STATS
+========================= */
+
+.watch-stats {
+  width: 100%;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.watch-stats > div {
+  padding: 12px 7px;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.watch-stats span {
+  display: block;
+  font-size: 17px;
+}
+
+.watch-stats strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+.watch-stats small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   APPS SCREEN
+========================= */
+
+.apps-screen {
+  position: absolute;
+  inset: 0;
+  padding: 70px 25px 70px;
+  background: #070a0e;
+  display: none;
+}
+
+.apps-screen.active {
+  display: block;
+}
+
+.apps-screen h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 10px;
+}
+
+.watch-app-button {
+  min-height: 75px;
+  border: none;
+  border-radius: 18px;
+  color: white;
+  background: #131a23;
+  border: 1px solid #202a37;
+  transition: 0.2s;
+}
+
+.watch-app-button:hover {
+  transform: translateY(-2px);
+  background: #1a2430;
+}
+
+.watch-app-button:first-line {
+  font-size: 22px;
+}
+
+.watch-app-button span {
+  display: block;
+  margin-top: 6px;
+  color: #aeb8c6;
+  font-size: 9px;
+}
+
+
+/* =========================
+   DETAIL SCREEN
+========================= */
+
+.detail-screen {
+  position: absolute;
+  inset: 0;
+  padding: 75px 25px 80px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: #070a0e;
+}
+
+.detail-screen.active {
+  display: flex;
+}
+
+.back-button {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background: #161e28;
+  font-size: 27px;
+}
+
+.detail-icon {
+  margin-top: 35px;
+  font-size: 45px;
+}
+
+.detail-screen h2 {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.detail-value {
+  margin-top: 22px;
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.detail-text {
+  color: var(--muted);
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav {
+  position: absolute;
+  bottom: 18px;
+  left: 24px;
+  right: 24px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 20;
+}
+
+.bottom-nav button {
+  min-width: 75px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 18px;
+  color: #aab4c2;
+  background: rgba(255, 255, 255, 0.055);
+  font-size: 17px;
+}
+
+.bottom-nav button:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bottom-nav span {
+  display: block;
+  font-size: 8px;
+  margin-top: 2px;
+}
+
+
+/* =========================
+   CROWN
+========================= */
+
+.crown {
+  position: absolute;
+  right: -14px;
+  top: 155px;
+  width: 18px;
+  height: 72px;
+  border-radius: 0 9px 9px 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #4a535e 0,
+      #4a535e 4px,
+      #242a31 4px,
+      #242a31 8px
+    );
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+  margin-top: 10px;
+}
+
+.controls h1 {
+  font-size: 25px;
+}
+
+.controls p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.control-buttons button {
+  padding: 11px 17px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: white;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.control-buttons button:hover {
+  background: #1a222d;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .watch {
+    width: 315px;
+    height: 415px;
+    border-radius: 60px;
+  }
+
+  .screen {
+    border-radius: 49px;
+  }
+
+  .watch-face {
+    padding-top: 65px;
+  }
+
+  .time {
+    font-size: 55px;
+  }
+
+  .watch-stats {
+    gap: 7px;
+  }
+
+  .watch-stats > div {
+    padding: 9px 5px;
+  }
+
+  .app-grid {
+    gap: 10px 7px;
+  }
+
+  .watch-app-button {
+    min-height: 65px;
+  }
+
+  .control-buttons {
+    flex-direction: column;
+  }
+
+  .control-buttons button {
+    width: 100%;
+  }
+}
